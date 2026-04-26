@@ -9,3 +9,6 @@ docs
 README.html
 
 .env
+
+data
+!data/.gitkeep
