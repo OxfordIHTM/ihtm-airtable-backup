@@ -13,6 +13,7 @@ jobs:
     #runs-on: self-hosted
     container: rocker/tidyverse:4.5.3
     env:
+      GIT_CRYPT_KEY64: ${{ secrets.GIT_CRYPT_KEY64 }}
       AIRTABLE_API_KEY: ${{ secrets.AIRTABLE_API_KEY }}
       IHTM_METADATA_BASE_ID: ${{ secrets.IHTM_METADATA_BASE_ID }}
     steps:
