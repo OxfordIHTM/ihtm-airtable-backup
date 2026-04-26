@@ -68,6 +68,17 @@ data_targets <- tar_plan(
       ihtm_airtable_metadata_structure, 
       ihtm_airtable_metadata_description
     ),
+    iteration = "list",
+    cue = tar_cue("always")
+  ),
+  tar_target(
+    name = ihtm_airtable_backup_csv,
+    command = airtabler::air_dump_to_csv(
+      table_list = ihtm_airtable_backup,
+      output_dir = file.path("data", ihtm_airtable_base_titles),
+      names_to_snake_case = FALSE
+    ),
+    pattern = map(ihtm_airtable_backup, ihtm_airtable_base_titles),
     iteration = "list"
   )
 )
