@@ -14,4 +14,9 @@ library(tidyr)
 library(openxlsx)
 library(ggplot2)
 library(quarto)
+library(dotenv)
 
+
+## Load packages for interfacing with Airtable ----
+
+library(airtabler)
