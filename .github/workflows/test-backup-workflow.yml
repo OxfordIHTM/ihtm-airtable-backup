@@ -9,23 +9,24 @@ on:
 
 jobs:
   test-backup-workflow:
-    #runs-on: ubuntu-latest
-    runs-on: self-hosted
-    #container: rocker/tidyverse:4.5.3
+    runs-on: ubuntu-latest
+    #runs-on: self-hosted
+    container: rocker/tidyverse:4.5.3
     env:
+      GIT_CRYPT_KEY64: ${{ secrets.GIT_CRYPT_KEY64 }}
       AIRTABLE_API_KEY: ${{ secrets.AIRTABLE_API_KEY }}
       IHTM_METADATA_BASE_ID: ${{ secrets.IHTM_METADATA_BASE_ID }}
     steps:
       - uses: actions/checkout@v6
       
-      # - name: Install system dependencies
-      #   run: |
-      #     apt-get update && apt-get install -y --no-install-recommends \
-      #     libxt6 libglpk-dev libuv1-dev cmake
+      - name: Install system dependencies
+        run: |
+          apt-get update && apt-get install -y --no-install-recommends \
+          libxt6 libglpk-dev libuv1-dev cmake
           
-      # - name: Trust git repo
-      #   run: |
-      #     git config --global --add safe.directory /__w/ihtm-airtable-backup/ihtm-airtable-backup
+      - name: Trust git repo
+        run: |
+          git config --global --add safe.directory /__w/ihtm-airtable-backup/ihtm-airtable-backup
           
       - name: Install packages from renv.lock (with cache)
         if: ${{ !env.ACT }}  
