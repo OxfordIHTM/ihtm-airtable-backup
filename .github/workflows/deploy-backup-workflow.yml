@@ -1,8 +1,6 @@
 name: deploy backup workflow
 
 on:
-  push:
-    branches: [main, master]
   schedule:
     - cron: "0 17 * * *"
   workflow_dispatch:
@@ -44,8 +42,4 @@ jobs:
         run: |
           targets::tar_make()
         shell: Rscript {0}
-        
-      - name: Copy backup to home directory
-        run: |
-          cp -r data/ ~/Documents/ihtm-airtable-backup/data/
 
