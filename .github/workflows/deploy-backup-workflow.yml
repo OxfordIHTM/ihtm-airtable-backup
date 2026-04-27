@@ -1,12 +1,12 @@
-name: test backup workflow
+name: deploy backup workflow
 
 on:
-  pull_request:
+  push:
     branches: [main, master]
   workflow_dispatch:
 
 jobs:
-  test-backup-workflow:
+  deploy-backup-workflow:
     #runs-on: ubuntu-latest
     runs-on: self-hosted
     #container: rocker/tidyverse:4.5.3
@@ -43,4 +43,7 @@ jobs:
           targets::tar_make()
         shell: Rscript {0}
         
-        
+      - name: Copy backup to home directory
+        run: |
+          cp -r data/ ~/Documents/ihtm-airtable-backup/
+
