@@ -8,4 +8,4 @@ options(
 
 source("renv/activate.R")
 
-dotenv::load_dot_env()
+library(dotenv)
