@@ -45,5 +45,5 @@ jobs:
         
       - name: Copy backup to home directory
         run: |
-          cp -r data/ ~/Documents/ihtm-airtable-backup/
+          cp -r data/ ~/Documents/ihtm-airtable-backup/data/
 
