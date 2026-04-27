@@ -3,6 +3,8 @@ name: deploy backup workflow
 on:
   push:
     branches: [main, master]
+  schedule:
+    - cron: "0 17 * * *"
   workflow_dispatch:
 
 jobs:
