@@ -20,18 +20,21 @@ data_targets <- tar_plan(
   tar_target(
     name = ihtm_airtable_base_titles,
     command = ihtm_metadata |>
+      dplyr::filter(status == "active") |>
       dplyr::select(title),
     cue = tar_cue("always")
   ),
   tar_target(
     name = ihtm_airtable_base_ids,
     command = ihtm_metadata |>
+      dplyr::filter(status == "active") |>
       dplyr::select(base_id),
     cue = tar_cue("always")
   ),
   tar_target(
     name = ihtm_airtable_base_descriptions,
     command = ihtm_metadata |>
+      dplyr::filter(status == "active") |>
       dplyr::select(description),
     cue = tar_cue("always")
   ),
