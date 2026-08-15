@@ -3,6 +3,10 @@
     "Version": "4.6.1",
     "Repositories": [
       {
+        "Name": "ropenscilabs",
+        "URL": "https://ropenscilabs.r-universe.dev"
+      },
+      {
         "Name": "CRAN",
         "URL": "https://cloud.r-project.org"
       }
@@ -825,11 +829,11 @@
       "Author": "Mark Padgham [aut, cre] (ORCID: <https://orcid.org/0000-0003-2172-5265>)",
       "Maintainer": "Mark Padgham <mark.padgham@email.com>",
       "RemoteType": "github",
+      "RemoteHost": "api.github.com",
       "RemoteUsername": "ropenscilabs",
       "RemoteRepo": "deposits",
       "RemoteRef": "main",
-      "RemoteSha": "b382f06753124b075c8c462a9ec4a3083a830c50",
-      "RemoteHost": "api.github.com"
+      "RemoteSha": "b382f06753124b075c8c462a9ec4a3083a830c50"
     },
     "digest": {
       "Package": "digest",
