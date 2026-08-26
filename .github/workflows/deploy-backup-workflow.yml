@@ -34,5 +34,4 @@ jobs:
 
       - name: Move backup
         run: |
-          rsync -av --progress data/. ~/Documents/ihtm-backups/airtable
-
+          rsync -av --progress data/. ~/ihtm-backups/airtable
